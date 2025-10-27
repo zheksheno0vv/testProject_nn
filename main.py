@@ -33,7 +33,7 @@ transform = transforms.Compose([
 check_image_app = FastAPI()
 type_device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = CheckImage()
-model.load_state_dict(torch.load('model.pth', map_location=type_device))
+model.load_state_dict(torch.load('model_mnist.pth', map_location=type_device))
 model.to(type_device)
 model.eval()
 
